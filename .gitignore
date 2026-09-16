@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Source/reference material — kept locally, not versioned
+/reference/
+/public/assets/projects/
+/public/assets/institutional/
