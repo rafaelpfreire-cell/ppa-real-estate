@@ -1,23 +1,21 @@
 import Link from "next/link";
+import { email, instagram, linkedin, offices, whatsapp } from "@/lib/contact";
 import { primaryNavItems } from "@/lib/navigation";
 
-const offices = [
-  {
-    city: "Recife",
-    lines: ["Rua do Cupim, 47", "Recife, PE · CEP 52011-070"],
-  },
-  {
-    city: "São Paulo",
-    lines: ["Av. Brig. Faria Lima, 3144 · 3º andar", "São Paulo, SP · CEP 01451-000"],
-  },
-];
+type FooterProps = {
+  hideContact?: boolean;
+};
 
-export function Footer() {
+export function Footer({ hideContact = false }: FooterProps) {
   const year = new Date().getFullYear();
+
+  const gridClassName = hideContact
+    ? "mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-3 md:gap-10 md:py-16 md:px-10 lg:gap-8"
+    : "mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-2 md:gap-10 md:py-16 md:px-10 lg:grid-cols-4 lg:gap-8";
 
   return (
     <footer className="border-t border-ink/10 bg-paper">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-12 md:grid-cols-2 md:gap-10 md:py-16 md:px-10 lg:grid-cols-4 lg:gap-8">
+      <div className={gridClassName}>
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element -- logo vetorial oficial, sem necessidade de otimização raster */}
           <img
@@ -48,58 +46,60 @@ export function Footer() {
           </div>
         </div>
 
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/60">
-            Contato
-          </p>
-          <ul className="mt-4 space-y-4 text-sm">
-            <li>
-              <a
-                href="https://wa.me/5581981273765"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chamar a PPA Real Estate no WhatsApp (abre em nova guia)"
-                className="inline-block text-charcoal/80 transition-colors duration-200 hover:text-ink"
-              >
-                <span className="block">(81) 98127-3765</span>
-                <span className="block text-xs text-charcoal/50">WhatsApp</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="mailto:info@pparealestate.com.br"
-                className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
-              >
-                info@pparealestate.com.br
-              </a>
-            </li>
-          </ul>
+        {hideContact ? null : (
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/60">
+              Contato
+            </p>
+            <ul className="mt-4 space-y-4 text-sm">
+              <li>
+                <a
+                  href={whatsapp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Chamar a PPA Real Estate no WhatsApp (abre em nova guia)"
+                  className="inline-block text-charcoal/80 transition-colors duration-200 hover:text-ink"
+                >
+                  <span className="block">{whatsapp.display}</span>
+                  <span className="block text-xs text-charcoal/50">WhatsApp</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${email}`}
+                  className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
+                >
+                  {email}
+                </a>
+              </li>
+            </ul>
 
-          <ul className="mt-6 space-y-3 text-sm">
-            <li>
-              <a
-                href="https://instagram.com/pparealestate"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram da PPA Real Estate (abre em nova guia)"
-                className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
-              >
-                Instagram <span aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://linkedin.com/pparealestate"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn da PPA Real Estate (abre em nova guia)"
-                className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
-              </a>
-            </li>
-          </ul>
-        </div>
+            <ul className="mt-6 space-y-3 text-sm">
+              <li>
+                <a
+                  href={instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram da PPA Real Estate (abre em nova guia)"
+                  className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
+                >
+                  Instagram <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn da PPA Real Estate (abre em nova guia)"
+                  className="text-charcoal/80 transition-colors duration-200 hover:text-ink"
+                >
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        )}
 
         <nav aria-label="Navegação institucional">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-charcoal/60">
