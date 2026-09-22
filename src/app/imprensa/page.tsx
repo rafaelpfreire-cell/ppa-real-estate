@@ -10,6 +10,26 @@ export const metadata: Metadata = {
   title: "Imprensa | PPA Real Estate",
   description:
     "Projetos, movimentos e parcerias da PPA Real Estate acompanhados pela imprensa e pelo mercado.",
+  alternates: {
+    canonical: "/imprensa",
+  },
+  openGraph: {
+    title: "Imprensa | PPA Real Estate",
+    description:
+      "Projetos, movimentos e parcerias da PPA Real Estate acompanhados pela imprensa e pelo mercado.",
+    url: "/imprensa",
+    siteName: "PPA Real Estate",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/assets/web/institucional-parceria-accor-ibis-ppa.jpg",
+        width: 2400,
+        height: 1600,
+        alt: "PPA Real Estate",
+      },
+    ],
+  },
 };
 
 export default function ImprensaPage() {

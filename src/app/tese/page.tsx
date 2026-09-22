@@ -13,6 +13,26 @@ export const metadata: Metadata = {
   title: "Nossa Tese | PPA Real Estate",
   description:
     "Hotelaria como classe de ativo imobiliário: por que a PPA concentra sua tese em hotéis, como seleciona oportunidades e como estrutura seus empreendimentos.",
+  alternates: {
+    canonical: "/tese",
+  },
+  openGraph: {
+    title: "Nossa Tese | PPA Real Estate",
+    description:
+      "Hotelaria como classe de ativo imobiliário: por que a PPA concentra sua tese em hotéis, como seleciona oportunidades e como estrutura seus empreendimentos.",
+    url: "/tese",
+    siteName: "PPA Real Estate",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/assets/web/institucional-parceria-accor-ibis-ppa.jpg",
+        width: 2400,
+        height: 1600,
+        alt: "PPA Real Estate",
+      },
+    ],
+  },
 };
 
 export default function TesePage() {

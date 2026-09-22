@@ -12,6 +12,26 @@ export const metadata: Metadata = {
   title: "A PPA | PPA Real Estate",
   description:
     "Conheça a PPA Real Estate: como nascemos, nosso papel na estruturação de empreendimentos imobiliários e por que a hotelaria é hoje nossa principal tese.",
+  alternates: {
+    canonical: "/a-ppa",
+  },
+  openGraph: {
+    title: "A PPA | PPA Real Estate",
+    description:
+      "Conheça a PPA Real Estate: como nascemos, nosso papel na estruturação de empreendimentos imobiliários e por que a hotelaria é hoje nossa principal tese.",
+    url: "/a-ppa",
+    siteName: "PPA Real Estate",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/assets/web/institucional-parceria-accor-ibis-ppa.jpg",
+        width: 2400,
+        height: 1600,
+        alt: "PPA Real Estate",
+      },
+    ],
+  },
 };
 
 export default function APpaPage() {

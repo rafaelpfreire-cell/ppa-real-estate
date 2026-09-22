@@ -9,6 +9,26 @@ export const metadata: Metadata = {
   title: "Portfólio | PPA Real Estate",
   description:
     "Conheça o portfólio de empreendimentos hoteleiros desenvolvidos pela PPA Real Estate em diferentes mercados brasileiros.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+  openGraph: {
+    title: "Portfólio | PPA Real Estate",
+    description:
+      "Conheça o portfólio de empreendimentos hoteleiros desenvolvidos pela PPA Real Estate em diferentes mercados brasileiros.",
+    url: "/portfolio",
+    siteName: "PPA Real Estate",
+    locale: "pt_BR",
+    type: "website",
+    images: [
+      {
+        url: "/assets/web/institucional-parceria-accor-ibis-ppa.jpg",
+        width: 2400,
+        height: 1600,
+        alt: "PPA Real Estate",
+      },
+    ],
+  },
 };
 
 export default function PortfolioPage() {
